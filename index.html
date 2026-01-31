@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Clínica Dental DAYCO en CDMX - Especialistas en ortodoncia, limpieza dental y estética. Tecnología moderna y trato humano. ¡Agenda tu cita hoy!">
+    <title>Consultorio Dental DAYCO | CDMX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .chat-slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-700 bg-slate-50 relative">
+
+    <nav class="bg-white shadow fixed w-full z-50 h-16 flex items-center justify-between px-4 lg:px-8">
+        <div class="flex items-center gap-2">
+            <img src="logo.png" alt="DAYCO Clínica Dental" class="h-12 w-auto object-contain">
+        </div>
+
+        <div class="hidden md:flex gap-6 items-center text-sm font-medium">
+            <a href="#inicio" class="hover:text-blue-600 transition">Inicio</a>
+            <a href="#servicios" class="hover:text-blue-600 transition">Tratamientos</a>
+            <a href="#" onclick="openBookingModal(event)"
+                class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow flex items-center gap-2">
+                <i class="fa-regular fa-calendar-check"></i> Agendar
+            </a>
+        </div>
+
+        <button id="menuBtn" class="md:hidden text-2xl text-slate-600">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobMenu"
+        class="hidden fixed top-16 left-0 w-full bg-white shadow-lg z-40 p-4 flex flex-col gap-4 md:hidden border-t">
+        <a href="#inicio" class="block py-2 text-blue-900 font-bold border-b border-gray-100">Inicio</a>
+        <a href="#servicios" class="block py-2 border-b border-gray-100">Tratamientos</a>
+        <a href="#" onclick="openBookingModal(event)"
+            class="block py-2 text-green-600 font-bold bg-green-50 rounded px-2">Agendar Cita</a>
+    </div>
+
+    <section id="inicio" class="pt-28 pb-16 px-4 bg-gradient-to-br from-blue-50 to-cyan-100">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <span
+                    class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-bold shadow mb-4 inline-block tracking-wide uppercase">
+                    ⭐ Odontología Integral
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-serif">
+                    Tu mejor sonrisa comienza en <span class="text-blue-600">DAYCO</span>
+                </h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    Cuidamos tu salud dental con tecnología moderna y un trato humano. Especialistas en devolverte la
+                    confianza al sonreír.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" onclick="openBookingModal(event)"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-blue-800 hover:-translate-y-1 transition flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check"></i> Agendar Cita
+                    </a>
+                </div>
+            </div>
+            <div class="relative h-72 md:h-96 w-full">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&fit=crop"
+                    alt="Consultorio dental moderno DAYCO" class="rounded-2xl shadow-2xl w-full h-full object-cover">
+
+                <div
+                    class="absolute -bottom-5 -left-5 bg-white p-4 rounded-xl shadow-xl flex gap-3 items-center animate-bounce">
+                    <div class="bg-green-100 p-3 rounded-full text-green-600 text-xl"><i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase font-semibold">Llámanos</p>
+                        <p class="font-bold text-slate-800">55 7484 2726</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900">Nuestros Tratamientos</h2>
+            <p class="text-slate-500 mt-2">Resultados reales para pacientes reales</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div
+                class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden border border-slate-100 group">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f7a?w=600&q=80"
+                        alt="Limpieza dental"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-tooth text-blue-500"></i> Limpieza
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-4">Profilaxis profesional y eliminación de sarro para encías
+                        sanas.</p>
+                    <a href="#" onclick="openBookingModal(event)"
+                        class="text-blue-600 font-bold hover:underline">Agendar ahora →</a>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden border border-slate-100 group">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80"
+                        alt="Tratamiento de ortodoncia"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-star text-orange-500"></i> Ortodoncia
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-4">Brackets y alineadores invisibles para la sonrisa perfecta.
+                    </p>
+                    <a href="#" onclick="openBookingModal(event)" class="text-blue-600 font-bold hover:underline">Ver
+                        opciones →</a>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden border border-red-100 group">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-red-900/10 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1600170311833-c2cf4f26900a?w=600&q=80"
+                        alt="Urgencia dental"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 bg-red-50">
+                    <h3 class="font-bold text-xl mb-2 text-red-700 flex items-center gap-2">
+                        <i class="fa-solid fa-heart-pulse"></i> Dolor / Urgencia
+                    </h3>
+                    <p class="text-sm text-red-800/70 mb-4">Atención prioritaria para dolor agudo o fracturas.</p>
+                    <a href="#" onclick="openBookingModal(event)" class="text-red-700 font-bold hover:underline">Agendar
+                        Urgencia →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="py-16 px-4 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Lo que dicen nuestros pacientes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Excelente atención, el lugar es muy limpio y los doctores son
+                        muy profesionales. Me explicaron todo mi tratamiento con detalle. ¡Muy recomendados!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">
+                            MR</div>
+                        <div>
+                            <p class="font-bold text-slate-900">María Rodriguez</p>
+                            <p class="text-xs text-slate-500">Limpieza Dental</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div class="flex gap-1 text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Llevé a mi hijo y tuvieron mucha paciencia. El tratamiento de
+                        ortodoncia ha avanzado muy rápido. Los precios son justos para la calidad que ofrecen."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">
+                            JL</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Jorge López</p>
+                            <p class="text-xs text-slate-500">Ortodoncia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-900 py-16 px-4 text-center text-white relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1000&blur=50"
+            alt="Consultorio Dayco fondo" class="absolute inset-0 w-full h-full object-cover opacity-20">
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">¿Primera vez en DAYCO?</h2>
+            <p class="mb-8 text-slate-300 text-lg">Obtén tu diagnóstico inicial sin costo al agendar tu limpieza
+                mencionando este sitio web.</p>
+            <a href="#" onclick="openBookingModal(event)"
+                class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-full font-bold inline-flex items-center gap-2 transition transform hover:scale-105 shadow-xl">
+                <i class="fa-regular fa-calendar-check text-xl"></i> Reclamar con Cita
+            </a>
+        </div>
+    </section>
+
+    <section id="pagos" class="py-16 px-4 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">Métodos de Pago</h2>
+            <p class="text-slate-500 mb-8">Aceptamos transferencias y depósitos bancarios.</p>
+
+            <div
+                class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-8 shadow-sm flex flex-col md:flex-row items-center gap-8 justify-between max-w-3xl mx-auto">
+                <div class="text-left md:w-1/2">
+                    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Banco</p>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">BBVA BANCOMER</h3>
+
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Beneficiario</p>
+                    <p class="text-lg font-medium text-slate-700 mb-4">ANGEL ALEXIS DAVILA</p>
+                </div>
+
+                <div class="text-left md:w-1/2 bg-white p-6 rounded-xl shadow-inner border border-slate-50 w-full">
+                    <div class="mb-4">
+                        <p class="text-xs text-slate-400 mb-1">Número de Cuenta</p>
+                        <p class="font-mono text-slate-800 text-lg select-all bg-slate-50 p-1 rounded">04 88 04 03 70
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-xs text-slate-400 mb-1">CLABE Interbancaria</p>
+                        <p class="font-mono text-slate-800 text-lg select-all bg-slate-50 p-1 rounded">012 180 004 880
+                            403 702</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 mb-1">Número de Tarjeta</p>
+                        <p class="font-mono text-slate-800 text-lg select-all bg-slate-50 p-1 rounded">4152 3144 0855
+                            6945</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 text-sm border-t border-slate-800">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4">DAYCO</h3>
+                <p>Comprometidos con la excelencia en salud bucal y estética dental.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Contacto</h4>
+                <p class="mb-2 flex items-center gap-2"><i class="fa-brands fa-whatsapp text-green-500"></i> 55 7484
+                    2726</p>
+                <p class="mb-2 flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-400"></i>
+                    Daycodental@gmail.com</p>
+                <p class="mb-2 flex gap-2"><i class="fa-solid fa-location-dot text-blue-500 mt-1"></i>
+                    <span class="text-sm">Paseos de los Bosques Ext. 18 Int. 7C,<br>San Buenaventura, Ixtapaluca, Edo.
+                        Mex.</span>
+                </p>
+                <div class="mt-4 text-xs text-slate-400">
+                    <p class="font-bold text-slate-300">Horarios:</p>
+                    <p>Lun - Vie: 9:00 am - 19:00 pm</p>
+                    <p>Sábados: 9:00 am - 16:00 pm</p>
+                </div>
+            </div>
+            <div>
+                <p>&copy; 2024 Consultorio Dental DAYCO.<br>Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-[60] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity opacity-0"
+            id="bookingBackdrop"></div>
+
+        <!-- Modal Content -->
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300"
+                id="bookingContent">
+
+                <!-- Header -->
+                <div class="flex justify-between items-center p-4 border-b">
+                    <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check text-blue-600"></i> Agendar Cita
+                    </h3>
+                    <button onclick="closeBookingModal()"
+                        class="text-gray-400 hover:text-gray-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Body (Calendar Iframe) -->
+                <div class="flex-1 bg-slate-50 relative overflow-hidden rounded-b-2xl flex flex-col">
+                    <div class="bg-blue-50 px-4 py-2 text-blue-800 text-sm text-center border-b border-blue-100">
+                        <i class="fa-solid fa-circle-info mr-1"></i> Selecciona un día y hora disponible en el
+                        calendario para reservar tu cita.
+                    </div>
+                    <!-- 
+                        IMPORTANTE: Reemplaza la URL del src de abajo con tu enlace de 'Agenda de citas' de Google Calendar.
+                        Ahora mismo muestra un calendario de ejemplo (festivos).
+                    -->
+                    <iframe src="https://calendar.app.google/KZqf6Cj496qr9sZ68" style="border: 0" width="100%"
+                        height="100%" frameborder="0" scrolling="yes">
+                    </iframe>
+                </div>
+                <!-- Modal Footer Hint -->
+                <div class="bg-white p-2 text-center text-xs text-slate-400 border-t rounded-b-2xl">
+                    ¿Necesitas cambiar tu cita? Revisa el enlace en tu correo de confirmación.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+
+        <!-- Chat Window (Bubble) -->
+        <div id="chatWindow"
+            class="hidden w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden chat-slide-up">
+            <div class="bg-blue-600 p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-white p-1 rounded-full text-blue-600"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div>
+                        <p class="font-bold text-sm">Asistente DAYCO</p>
+                        <p class="text-xs text-blue-200">En línea</p>
+                    </div>
+                </div>
+                <button id="closeChat" class="text-blue-200 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chatMessages" class="h-64 p-4 overflow-y-auto bg-slate-50 flex flex-col gap-3 text-sm">
+                <div
+                    class="bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm text-slate-600 max-w-[90%] border border-gray-100">
+                    Bienvenido a DAYCO. 🩺 Soy su asistente clínico digital.<br>
+                    Estoy capacitado para asistirle con su salud dental y agenda.<br><br>
+                    Por favor seleccione una opción:<br>
+                    1️⃣ Programar Consulta<br>
+                    2️⃣ Gestión de Citas (Cambios/Cancelaciones)<br>
+                    3️⃣ Ubicación y Horarios Clínicos<br>
+                    4️⃣ Tratamientos Especializados
+                    <!-- Messages will appear here -->
+                </div>
+                <div class="p-3 bg-white border-t border-gray-100 flex gap-2">
+                    <input type="text" id="chatInput" placeholder="Escribe un mensaje..."
+                        class="flex-1 bg-slate-100 rounded-full px-4 py-2 text-sm outline-none focus:ring-1 focus:ring-blue-500">
+                    <button id="sendBtn"
+                        class="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center hover:bg-blue-700 transition"><i
+                            class="fa-solid fa-paper-plane text-xs"></i></button>
+                </div>
+            </div>
+
+            <!-- Float Buttons -->
+            <div class="flex gap-4 items-end">
+                <!-- Chat Trigger -->
+                <button id="chatTrigger"
+                    class="bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-blue-700 hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-comment-medical"></i>
+                </button>
+
+                <!-- WhatsApp Trigger -->
+                <a href="https://wa.me/525574842726?text=Hola%20DAYCO,%20necesito%20información."
+                    class="bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-3xl hover:bg-green-600 hover:scale-110 transition duration-300">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <script>
+            // Mobile Menu
+            const btn = document.getElementById('menuBtn');
+            const menu = document.getElementById('mobMenu');
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            menu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => menu.classList.add('hidden')));
+
+            // Chat Widget Logic
+            const chatTrigger = document.getElementById('chatTrigger');
+            const chatWindow = document.getElementById('chatWindow');
+            const closeChat = document.getElementById('closeChat');
+            const sendBtn = document.getElementById('sendBtn');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            function toggleChat() {
+                chatWindow.classList.toggle('hidden');
+            }
+
+            chatTrigger.addEventListener('click', toggleChat);
+            closeChat.addEventListener('click', toggleChat);
+
+            function addMessage(text, isUser = false) {
+                const div = document.createElement('div');
+                div.className = isUser
+                    ? 'bg-blue-600 text-white p-3 rounded-tl-xl rounded-bl-xl rounded-br-xl shadow-sm self-end max-w-[90%]'
+                    : 'bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm text-slate-600 max-w-[90%] border border-gray-100';
+                div.textContent = text;
+                chatMessages.appendChild(div);
+                // Auto scroll
+                chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+            }
+
+            function handleSend() {
+                const text = chatInput.value.trim();
+                if (!text) return;
+
+                addMessage(text, true);
+                chatInput.value = '';
+
+                // Loading state
+                const loadingDiv = document.createElement('div');
+                loadingDiv.className = 'bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm text-slate-400 max-w-[90%] border border-gray-100 text-xs italic';
+                loadingDiv.innerHTML = '<i class="fa-solid fa-ellipsis fa-fade"></i> Escribiendo...';
+                chatMessages.appendChild(loadingDiv);
+                chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+
+                setTimeout(() => {
+                    loadingDiv.remove();
+                    let responseHTML = "";
+
+                    // Logic for Menu
+                    const cleanText = text.toLowerCase();
+
+                    if (cleanText === '1' || cleanText.includes('agendar') || cleanText.includes('programar')) {
+                        // Professional Tone
+                        responseHTML = `Excelente decisión. �<br>
+                    Para aperturar su expediente y confirmar su visita, requiero los siguientes datos:<br><br>
+                    ✍️ Nombre Completo del Paciente<br>
+                    📞 Teléfono de Contacto<br>
+                    🦷 Motivo de la Consulta<br><br>
+                    Alternativamente, puede acceder a nuestra <a href="#" onclick="openBookingModal(event)" class="text-blue-600 underline font-bold">Agenda Digital</a> para seleccionar su horario directamente.`;
+                    }
+                    else if (cleanText === '2' || cleanText.includes('cancelar') || cleanText.includes('cambiar') || cleanText.includes('gestión')) {
+                        responseHTML = `Comprendo. 👍<br>
+                    Para gestionar cualquier modificación en su agenda clínica, por favor indíquenos su nombre y fecha actual.<br><br>
+                    💡 <b>Nota:</b> Si realizó su reserva vía web, verifique su correo de confirmación (Google Calendar), donde encontrará un enlace directo para reprogramar sin espera.`;
+                    }
+                    else if (cleanText === '3' || cleanText.includes('horario') || cleanText.includes('ubicación') || cleanText.includes('ubicacion')) {
+                        responseHTML = `🕘 <b>Horarios de Atención Clínica:</b><br>
+                    Lunes a Viernes: 9:00 am – 7:00 pm<br>
+                    Sábado: 9:00 am – 4:00 pm<br><br>
+                    📍 <b>Ubicación del Consultorio:</b><br>
+                    Paseos de los Bosques ext. 18 Int. 7c, colonia SANBUENAVENTURA IXTAPALUCA EDO. MEX.`;
+                    }
+                    else if (cleanText === '4' || cleanText.includes('servicio') || cleanText.includes('tratamiento')) {
+                        responseHTML = `🧠🦷 <b>Nuestros Tratamientos Especializados:</b><br>
+                    • Profilaxis Dental (Limpieza)<br>
+                    • Resinas Estéticas<br>
+                    • Exodoncias (Extracciones)<br>
+                    • Blanqueamiento Clínico<br>
+                    • Ortodoncia Avanzada<br>
+                    • Valoración Integral<br><br>
+                    Si desea programar, escriba 👉 <b>Programar Consulta</b> (o presione 1)`;
+                    }
+                    else {
+                        // Default logic
+                        if (cleanText.includes('confirmo')) {
+                            responseHTML = `¡Confirmado! 🙌<br>Su cita ha sido registrada. Le esperamos puntualmente.`;
+                        } else if (cleanText.includes('no asisto')) {
+                            responseHTML = `Agradecemos su aviso. �<br>Quedamos a su disposición para reagendar cuando lo requiera.`;
+                        } else {
+                            responseHTML = `Por favor seleccione una opción del menú clínico:<br>
+                        1️⃣ Programar Consulta<br>
+                        2️⃣ Gestión de Citas<br>
+                        3️⃣ Ubicación y Horarios<br>
+                        4️⃣ Tratamientos Especializados`;
+                        }
+                    }
+
+                    // Add response
+                    const div = document.createElement('div');
+                    div.className = 'bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm text-slate-600 max-w-[90%] border border-gray-100';
+                    div.innerHTML = responseHTML;
+                    chatMessages.appendChild(div);
+                    chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
+
+                }, 1000);
+            }
+
+            sendBtn.addEventListener('click', handleSend);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleSend();
+            });
+
+            // Booking Modal Logic
+            const bookingModal = document.getElementById('bookingModal');
+            const bookingBackdrop = document.getElementById('bookingBackdrop');
+            const bookingContent = document.getElementById('bookingContent');
+
+            function openBookingModal(e) {
+                if (e) e.preventDefault();
+                bookingModal.classList.remove('hidden');
+                // Small delay to allow display:block to apply before opacity transition
+                setTimeout(() => {
+                    bookingBackdrop.classList.remove('opacity-0');
+                    bookingContent.classList.remove('scale-95', 'opacity-0');
+                }, 10);
+            }
+
+            function closeBookingModal() {
+                bookingBackdrop.classList.add('opacity-0');
+                bookingContent.classList.add('scale-95', 'opacity-0');
+
+                setTimeout(() => {
+                    bookingModal.classList.add('hidden');
+                }, 300); // Match transition duration
+            }
+
+            // Close on backdrop click
+            bookingBackdrop.addEventListener('click', closeBookingModal);
+        </script>
+</body>
+
+</html>
